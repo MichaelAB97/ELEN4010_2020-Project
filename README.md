@@ -1,4 +1,8 @@
 # BillCleave
+[![Build Status](https://travis-ci.com/witseie-elen4010/2020-009-project.svg?token=PTh9WFJ3FwB19e6xVyDy&branch=master)](https://travis-ci.com/witseie-elen4010/2020-009-project)
+
+[![Coverage Status](https://coveralls.io/repos/github/witseie-elen4010/2020-009-project/badge.svg?branch=master)](https://coveralls.io/github/witseie-elen4010/2020-009-project?branch=master)
+
 
 - Madimetja Sethosa (1076467)
 - Teboho Matsheke (1157717)
