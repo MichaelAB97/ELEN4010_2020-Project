@@ -1,0 +1,22 @@
+{
+  "name": "group009",
+  "version": "1.0.0",
+  "description": "[![Build Status](https://travis-ci.com/witseie-elen4010/2020-009-project.svg?token=PTh9WFJ3FwB19e6xVyDy&branch=master)](https://travis-ci.com/witseie-elen4010/2020-009-project)",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/witseie-elen4010/2020-009-project.git"
+  },
+  "author": "group009",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/witseie-elen4010/2020-009-project/issues"
+  },
+  "homepage": "https://github.com/witseie-elen4010/2020-009-project#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
