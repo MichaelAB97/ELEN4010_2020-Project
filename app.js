@@ -1,3 +1,5 @@
+require('dotenv').config()
+const database = require('./modules/database/db-connections') // testing db-connection
 var express = require('express')
 var app = express()
 
