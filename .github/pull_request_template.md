@@ -1,5 +1,5 @@
 **Issue: {{Issue ID}}**
-Closes #{{issue-number-without-braces}}
+closes #{{issue-number-without-braces}}
 
 ## Type
 * Is this a new feature, a fix to an existing one, a quick patch, a skeleton/prototype, etc.
@@ -21,3 +21,6 @@ Closes #{{issue-number-without-braces}}
 
 ## Verification Process
 * What was the process to verify/test this code? It's okay to say "none" but let's get into a habit of documenting this.
+* Pull this branch
+* run **npm install**
+* execute **npm run start:dev**
