@@ -22,7 +22,6 @@
   },
   "homepage": "https://github.com/witseie-elen4010/2020-009-project#readme",
   "dependencies": {
-    "app-root-path": "^3.0.0",
     "express": "^4.17.1",
     "mssql": "6.2.0"
   },

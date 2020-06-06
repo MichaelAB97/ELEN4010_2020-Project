@@ -1,7 +1,9 @@
-require('dotenv').config()
+'use strict'
+
+if (process.env.NODE_ENV = 'development') { require('dotenv').config() }
 const database = require('./modules/database/db-connections') // testing db-connection
-var express = require('express')
-var app = express()
+const express = require('express')
+const app = express()
 
 // loading our router
 const appRouter = require('./appRoutes.js')
