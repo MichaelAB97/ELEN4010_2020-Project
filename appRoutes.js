@@ -1,6 +1,5 @@
 const path = require('path')
-var express = require('express')
-const router = express.Router()
+const router = require('express').Router()
 
 router.get('/', function (req, res) {
   res.send('Hello World!')
