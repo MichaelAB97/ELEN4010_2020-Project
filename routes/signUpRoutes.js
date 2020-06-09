@@ -21,33 +21,35 @@ router.post('/api/signUp', function (req, res) {
     // generate hash of password
     const passhash = bcrypt.hashSync(password, salt)
     // hash the confirm password
-    const confirmPasswordHash = bcrypt.hashSync(confirmpassword, salt)
+    const confirmPasswordHash = bcrypt.hashSync(confirmPassword, salt)
   
     db.pools
       .then((pool) => {
         return pool.request()
-          .query('SELECT * FROM users')
+          .query('SELECT * FROM BillCleave.Users')
       })
       .then(result => {
-          // check if user already exists in the data base
-        //let confirmemail = signUpVer.verifySignUpEmail(result.recordset, email)
+          User.username = username
+          User.email = email
+        // check if user already exists in the data base
+        console.log(User)
   
-        if (passhash===confirmPasswordHash) {
+        if (User.findIndex(function (user) {
+            return User.email === email
+              })!==-1) {
+                  console.log('Im am msms')
   
           // Store details of new user if passwords match
-          //if (isPasswordsMatch && passWordLength && validCellphone) {
             db.pools
               .then((pool) => {
                 return pool.request()
-                  .query('INSERT INTO users (username, email, passHash) VALUES (\'' + username + '\',\'' + email + '\',\'' + passhash + '\')')
+                  .query('INSERT INTO BillCleave.Users (username, email, password) VALUES (\'' + username + '\',\'' + email + '\',\'' + passhash + '\')')
               })
             res.redirect('/')
-          //} else {
-            //res.redirect('/login')
-          //}
         } else {
-          res.redirect('/signUp')
+          res.redirect('/login')
         }
+
       })
       .catch(err => {
         console.log(err)
