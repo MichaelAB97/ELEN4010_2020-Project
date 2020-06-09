@@ -14,15 +14,17 @@ const db = mysql.createConnection({
 
 exports.login = async (req, res) => {
     try {
-        const { email, password } = req.body;
+        const { username, password } = req.body;
 
         if(!username || !password ) {
+            console.log("One of both of the fields are empty");
             return res.status(400).redirect("/auth/login");
         }
 
-        db.query('SELECT * FROM users WHERE email = ?', [username], async (error, results) =>{
+        db.query('SELECT * FROM users WHERE username = ?', [username], async (error, results) =>{
             console.log(results);
-            if(!results || !(await bcrypt.compare(email, results[0].password) )){
+            if(!results || !(await bcrypt.compare(password, results[0].password) )){
+                console.log("Username or password is incorrect")
                 return res.status(401).redirect("/auth/login")
             }else {
                 const id = results[0].id;
@@ -38,7 +40,7 @@ exports.login = async (req, res) => {
                     httpOnly: true
                 }
                 res.cookie('cooks', token, cookieOptions);
-                res.status(200).redirect("/modal")
+                res.status(200).send("Login Successful");
             }
                 
 
