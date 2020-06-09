@@ -4,7 +4,7 @@
   "description": "[![Build Status](https://travis-ci.com/witseie-elen4010/2020-009-project.svg?token=PTh9WFJ3FwB19e6xVyDy&branch=master)](https://travis-ci.com/witseie-elen4010/2020-009-project)",
   "main": "app.js",
   "scripts": {
-    "test": "jest",
+    "test": "jest --coverage && coveralls < coverage/lcov.info",
     "start": "node app",
     "start:dev": "nodemon app"
   },
@@ -22,8 +22,8 @@
   },
   "homepage": "https://github.com/witseie-elen4010/2020-009-project#readme",
   "dependencies": {
-
     "bcrypt": "^5.0.0",
+    "body-parser": "^1.19.0",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
     "connect-flash": "^0.1.1",
@@ -37,6 +37,8 @@
     "passport-local": "^1.0.0"
   },
   "devDependencies": {
+    "@types/jest": "^25.2.3",
+    "coveralls": "^3.1.0",
     "dotenv": "^8.2.0",
     "jest": "^26.0.1",
     "nodemon": "^2.0.4"
