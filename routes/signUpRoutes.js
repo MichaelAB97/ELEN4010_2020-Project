@@ -4,6 +4,7 @@ let path = require('path')
 let express = require('express')
 let router = express.Router()
 let db = require('../modules/database/db-connections')
+let signUpCheck = require('../models/signUpCheck')
 const bcrypt = require('bcryptjs')
 
 let User = require('../modules/user')
@@ -29,25 +30,21 @@ router.post('/api/signUp', function (req, res) {
           .query('SELECT * FROM BillCleave.Users')
       })
       .then(result => {
-          User.username = username
-          User.email = email
-        // check if user already exists in the data base
+        // check if user doesn't exist in the data base
         console.log(User)
-  
-        if (User.findIndex(function (user) {
-            return User.email === email
-              })!==-1) {
-                  console.log('Im am msms')
-  
-          // Store details of new user if passwords match
+        //let emailCheck = signUpCheck.SignUpEmail(result.recordset, email)
+
+        if(signUpCheck.SignUpEmail(result.recordset, email)){
+            // Store details of new user if passwords match
             db.pools
               .then((pool) => {
                 return pool.request()
                   .query('INSERT INTO BillCleave.Users (username, email, password) VALUES (\'' + username + '\',\'' + email + '\',\'' + passhash + '\')')
               })
             res.redirect('/')
-        } else {
-          res.redirect('/login')
+
+        } else{
+            res.redirect('/login')
         }
 
       })
