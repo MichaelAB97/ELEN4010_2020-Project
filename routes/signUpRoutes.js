@@ -6,8 +6,6 @@ let router = express.Router()
 let db = require('../modules/database/db-connections')
 let signUpCheck = require('../models/signUpCheck')
 const bcrypt = require('bcryptjs')
-
-let User = require('../modules/user')
 let salt = bcrypt.genSaltSync(10)
 
 router.get('/signUp', function (_req, res) {
@@ -19,9 +17,8 @@ router.post('/api/signUp', function (req, res) {
     // Get the user input
     const { username, email, password, confirmPassword } = req.body
 
-    // generate hash of password
+    // generate hash of password and confirm password
     const passhash = bcrypt.hashSync(password, salt)
-    // hash the confirm password
     const confirmPasswordHash = bcrypt.hashSync(confirmPassword, salt)
   
     db.pools
@@ -32,7 +29,6 @@ router.post('/api/signUp', function (req, res) {
       .then(result => {
         // check if user doesn't exist in the data base
         console.log(User)
-        //let emailCheck = signUpCheck.SignUpEmail(result.recordset, email)
 
         if(signUpCheck.SignUpEmail(result.recordset, email)){
             // Store details of new user if passwords match
