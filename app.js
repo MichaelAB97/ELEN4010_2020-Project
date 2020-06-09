@@ -5,11 +5,20 @@ const database = require('./modules/database/db-connections') // testing db-conn
 const express = require('express')
 const app = express()
 
-// loading our router
+// loading body parser
+let bodyParser = require('body-parser')
+
+// tell express to use body parser for JSON and URL encoded form bodies
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({ extended: true }))
+
+// loading our routers
 const appRouter = require('./appRoutes.js')
+let signupRouter = require('./routes/signUpRoutes.js')
 
 // mounting our router
 app.use('/', appRouter)
+app.use('/signUp',signupRouter)
 
 const port = process.env.PORT || 3000
 app.listen(port)

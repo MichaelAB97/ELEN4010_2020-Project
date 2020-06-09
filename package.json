@@ -22,6 +22,8 @@
   },
   "homepage": "https://github.com/witseie-elen4010/2020-009-project#readme",
   "dependencies": {
+    "bcrypt": "^5.0.0",
+    "bcryptjs": "^2.4.3",
     "express": "^4.17.1",
     "mssql": "6.2.0"
   },

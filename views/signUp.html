@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Register an Account</title>
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css" />
+  <link rel="stylesheet" href="../public/css/signUp.css">
+  <script src="../public/scripts/signUp.js"></script>
+</head>
+<body>
+
+  <div class="container">
+    <h1 class="brand"><span>BillCleave</span></h1>
+    <div class="wrapper animated bounceInLeft">
+      <div class="company-info">
+        <ul>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+          <li>
+            <h5>
+                <div style="text-align:justify">
+                 <button class="button button2">
+                    <a href="/">Click here to Cancel Registration and Login</a>
+                 </button>   
+            </div>
+            </h5>
+
+          </li>
+        </ul>
+      </div>
+      <div class="contact">
+        <h3 id="status">Register</h3>
+      
+        <form class="form-signin" action="./api/signUp" method="POST">
+            <div class="form-label-group">
+                <label for="inputEmail">Username</label>
+                <input type="text" name="username" id="username" class="form-control"
+                    placeholder="Username" required autofocus>
+                
+            </div>
+            <div class="form-label-group">
+                <label for="inputEmail">Email address</label>
+                <input type="email" name="email" id="email" class="form-control"
+                    placeholder="Email address" required autofocus>
+                
+            </div>
+            
+            <div class="form-label-group">
+                <label for="inputPassword">Password</label>
+                <input type="password" name= "password" id="password" class="form-control"
+                    placeholder="Password" required
+                    onkeyup='checkPasswordLength();'
+                >
+                <span id='passwordMessage'></span>
+                
+            </div>
+            
+            <div class="form-label-group">
+                <label for="inputPassword">Confirm password</label>
+                <input type="password" name="confirmPassword" id="confirmPassword" class="form-control"
+                    placeholder="Confirm Password" required
+                    onkeyup='checkPasswordMatch();'
+                    >
+                <span id='confirmPasswordMessage'></span>	
+            </div>
+
+            <button type="submit"
+                class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2"
+                type="submit" id='signUpButton'>Sign Up</button>
+            <hr class="my-4">
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
