@@ -6,16 +6,7 @@ const express = require('express')
 const app = express()
 const cookieParser = require('cookie-parser');
 
-app.use(express.urlencoded({ extended: false}));
-app.use(express.json());
 app.use(cookieParser());
-
-// loading body parser
-let bodyParser = require('body-parser')
-
-// tell express to use body parser for JSON and URL encoded form bodies
-app.use(bodyParser.json())
-app.use(bodyParser.urlencoded({ extended: true }))
 
 // loading body parser
 let bodyParser = require('body-parser')
