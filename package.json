@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/witseie-elen4010/2020-009-project#readme",
   "dependencies": {
+    "bcrypt": "^5.0.0",
     "body-parser": "^1.19.0",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
