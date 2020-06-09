@@ -22,8 +22,13 @@
   },
   "homepage": "https://github.com/witseie-elen4010/2020-009-project#readme",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "connect-flash": "^0.1.1",
     "express": "^4.17.1",
-    "mssql": "6.2.0"
+    "express-session": "^1.17.1",
+    "mssql": "6.2.0",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0"
   },
   "devDependencies": {
     "dotenv": "^8.2.0",
