@@ -7,10 +7,10 @@ let checkPasswordMatch = function () {
 
   if (password === confirmPassword) {
     document.getElementById('confirmPasswordMessage').style.color = 'green'
-    //document.getElementById('confirmPasswordMessage').innerHTML = 'match'
+    document.getElementById('confirmPasswordMessage').innerHTML = 'match'
   } else {
     document.getElementById('confirmPasswordMessage').style.color = 'red'
-    //document.getElementById('confirmPasswordMessage').innerHTML = 'does not match'
+    document.getElementById('confirmPasswordMessage').innerHTML = 'does not match'
   }
 }
 
@@ -19,10 +19,10 @@ let checkPasswordLength = function () {
 
   if (password.length < 8) {
     document.getElementById('passwordMessage').style.color = 'red'
-    //document.getElementById('passwordMessage').innerHTML = 'weak password, use a minimum of 8 characers'
+    document.getElementById('passwordMessage').innerHTML = 'weak password, use 8 characers or more'
   } else {
     document.getElementById('passwordMessage').style.color = 'green'
-    //document.getElementById('passwordMessage').innerHTML = 'strong password'
+    document.getElementById('passwordMessage').innerHTML = 'strong password'
   }
 }
 
