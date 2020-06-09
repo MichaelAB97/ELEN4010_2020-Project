@@ -15,13 +15,6 @@ let bodyParser = require('body-parser')
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 
-// loading body parser
-let bodyParser = require('body-parser')
-
-// tell express to use body parser for JSON and URL encoded form bodies
-app.use(bodyParser.json())
-app.use(bodyParser.urlencoded({ extended: true }))
-
 //app.use(express.static(path.join(__dirname, './public/scripts')))
 //app.use(express.static(path.join(__dirname, './public/css')))
 app.use('/cdn', express.static('public'));
