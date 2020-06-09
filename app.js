@@ -5,9 +5,17 @@ const database = require('./modules/database/db-connections') // testing db-conn
 const express = require('express')
 const app = express()
 const cookieParser = require('cookie-parser');
+
 app.use(express.urlencoded({ extended: false}));
 app.use(express.json());
 app.use(cookieParser());
+
+// loading body parser
+let bodyParser = require('body-parser')
+
+// tell express to use body parser for JSON and URL encoded form bodies
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({ extended: true }))
 
 // loading our router
 const appRouter = require('./appRoutes.js')
@@ -15,7 +23,7 @@ const appRouter = require('./appRoutes.js')
 // mounting our router
 app.use('/', appRouter)
 
-app.use('/auth', require('./config/auth.js'))
+app.use('/auth', require('./auth.js'))
 
 const port = process.env.PORT || 3000
 app.listen(port)
