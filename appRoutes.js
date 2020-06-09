@@ -17,4 +17,8 @@ router.get('/auth/login', function (req, res) {
   res.sendFile(path.join(__dirname, 'config', 'authorisation', 'views' , 'unauthorised.html'));
 });
 
+router.get('/auth/login/dashboard', function (req, res) {
+  res.sendFile(path.join(__dirname, 'views' , 'dashboard.html'));
+});
+
 module.exports = router

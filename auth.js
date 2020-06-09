@@ -22,7 +22,7 @@ router.post('/login', function (req, res) {
             console.log("Username or password is incorrect")
             return res.status(401).redirect("/auth/login")
         } else {
-            res.status(200).send("Login Successful");
+            res.status(200).redirect("/auth/login/dashboard")
         }
     })
 })
