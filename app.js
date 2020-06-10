@@ -15,12 +15,20 @@ const bodyParser = require('body-parser')
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 
-// loading our router
+//app.use(express.static(path.join(__dirname, './public/scripts')))
+//app.use(express.static(path.join(__dirname, './public/css')))
+app.use('/cdn', express.static('public'));
+
+// loading our routers
 const appRouter = require('./appRoutes.js')
+let signupRouter = require('./routes/signUpRoutes.js')
 
 // mounting our router
 app.use('/', appRouter)
 app.use('/cdn', express.static('public'))
+
+app.use('/signUp',signupRouter)
+
 
 app.use('/auth', require('./auth.js'))
 
