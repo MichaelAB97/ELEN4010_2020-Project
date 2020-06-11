@@ -28,7 +28,6 @@ router.post('/api/signUp', function (req, res) {
       })
       .then(result => {
         // check if user doesn't exist in the data base
-        console.log(User)
 
         if(signUpCheck.SignUpEmail(result.recordset, email)){
             // Store details of new user if passwords match
