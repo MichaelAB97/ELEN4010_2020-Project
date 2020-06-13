@@ -14,11 +14,15 @@ router.get('/login', function (req, res) {
 })
 
 router.get('/auth/login', function (req, res) {
-  res.sendFile(path.join(__dirname, 'config', 'authorisation', 'views' , 'unauthorised.html'));
-});
+  res.sendFile(path.join(__dirname, 'config', 'authorisation', 'views', 'unauthorised.html'))
+})
 
 router.get('/auth/login/dashboard', function (req, res) {
-  res.sendFile(path.join(__dirname, 'views' , 'dashboard.html'));
-});
+  res.sendFile(path.join(__dirname, 'views', 'dashboard.html'))
+})
+
+router.get('/home', function (req, res) {
+  res.sendFile(path.join(__dirname, 'views', 'profile.html'))
+})
 
 module.exports = router
