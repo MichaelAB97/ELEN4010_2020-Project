@@ -1,4 +1,4 @@
-
+/* eslint-env jest */
 const House = require('../modules/house.js')
 
 describe('House contructor initialization', () => {
