@@ -22,18 +22,22 @@
   },
   "homepage": "https://github.com/witseie-elen4010/2020-009-project#readme",
   "dependencies": {
+    "@azure/storage-blob": "^12.1.2",
     "bcrypt": "^5.0.0",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
     "connect-flash": "^0.1.1",
+    "connect-mssql": "^1.5.0",
+    "connect-tedious": "^1.1.2",
     "cookie-parser": "^1.4.5",
     "express": "^4.17.1",
+    "express-flash-messages": "^0.1.1",
     "express-session": "^1.17.1",
     "jsonwebtoken": "^8.5.1",
     "mssql": "6.2.0",
-    "mysql": "^2.18.1",
     "passport": "^0.4.1",
-    "passport-local": "^1.0.0"
+    "passport-local": "^1.0.0",
+    "uuid": "^8.1.0"
   },
   "devDependencies": {
     "@types/jest": "^25.2.3",
