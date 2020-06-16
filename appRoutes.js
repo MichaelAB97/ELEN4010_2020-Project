@@ -9,4 +9,7 @@ router.get('/about', function (req, res) {
   res.sendFile(path.join(__dirname, 'views', 'about.html'))
 })
 
+router.get('/signUp', function (req, res) {
+  res.sendFile(path.join(__dirname, 'views', 'signUp.html'))
+})
 module.exports = router
