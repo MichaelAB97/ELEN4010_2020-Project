@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <title>Your Profile</title>
+
+    <!-- Latest compiled and minified Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="/cdn/css/styles.css" type="text/css"/> 
+    <script src="/cdn/scripts/profile.js"></script>
+</head>
+<body >
+<!--Main container. Everything must be contained within a top-level container.-->
+<div class="container-fluid">
+
+    <!--First row (only row)-->
+    <div class="row extra_margin">
+
+      <!-- First column (smaller of the two). Will appear on the left on desktop and on the top on mobile. -->
+      <div class="col-md-4 col-sm-12 col-xs-12">
+
+          <!-- Div to center the header image/name/social buttons -->
+          <div class="text-center">
+
+              <!-- Placeholder image using Placeholder.com -->
+              <img src="http://via.placeholder.com/300x250" class="img-rounded"/>
+
+              <div id='Name' class = "details">
+                <h6> USERNAME</h6>
+              </div>
+
+              <div id='Email' class = "details">
+                <h6>EMAIL</h6>
+              </div>
+
+              <div id='Numbers' class = "details">
+                <h6>MOBILE NUMBERS</h6>
+              </div>
+              <div>
+                <p>
+                  <a class="btn btn-primary btn-xs" href="#" role="button"> Edit Details</a>
+                  <form method = 'post' action='/views/createHouse'>
+                    <button>
+                      Create House
+                    </button>
+                  </form>
+                  <a class="btn btn-primary btn-xs" href="#" role="button"> Add Transection</a>
+              </p>
+              </div>
+
+          </div>
+
+      </div> <!-- End Col 1 -->
+
+      <!-- Second column - for small and extra-small screens, will use whatever # cols is available -->
+      <div class="col-md-8 col-sm-* col-xs-*">
+        <div id = "Balances">
+          <h1> BALANCES</h1>
+
+        </div>
+        <hr />
+        <div id = "Houses">
+          <h1> HOUSES</h1>
+        
+
+        </div>
+        <hr />
+        <div id = "Transections">
+          <h1> TRANSECTIONS</h1>
+
+        </div>
+
+      </div> <!-- End column 2 -->
+
+    </div> <!-- End row 1 -->
+
+  </div> <!-- End main container -->
+
+
+  <form method = 'post' action='/login/logout'>
+    <button>
+      Log Out
+    </button>
+  </form>
+</body>
+</html>

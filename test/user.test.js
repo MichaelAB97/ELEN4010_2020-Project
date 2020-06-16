@@ -1,4 +1,4 @@
-
+/* eslint-env jest */
 const User = require('../modules/user.js')
 
 describe('Contructor initialization', () => {
