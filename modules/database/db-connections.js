@@ -3,6 +3,27 @@ const config = require('../../config')
 
 const mssql = require('mssql')
 
+// sessions connection
+let sessionStoreConnection
+if (process.env.NODE_ENV !== 'test') {
+  const session = require('express-session')
+  const TediousStore = require('connect-tedious')(session)
+
+  sessionStoreConnection = new TediousStore({
+    idleTimeout: 600000,
+    config: {
+      userName: config.database.username,
+      password: config.database.password,
+      server: config.database.host,
+      options: {
+        database: config.database.name,
+        dialect: mssql,
+        port: 1433,
+        encrypt: true
+      }
+    }
+  })
+}
 // Make sure this is private to this module
 const dbConfig = {
   server: config.database.host,
@@ -41,5 +62,6 @@ module.exports = {
   sql: mssql,
   pools: pools,
   isConnected: isConnected,
-  connectionError: connectionError
+  connectionError: connectionError,
+  sessionStoreConnection: sessionStoreConnection
 }
