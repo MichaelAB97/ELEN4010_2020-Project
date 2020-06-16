@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Update profile</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <link rel="stylesheet" href="/cdn/css/editProfile.css">
+  </head>
+  <body>
+    <form class="decor" action="/api/edit" method="POST">
+      <div class="form-left-decoration"></div>
+      <div class="form-right-decoration"></div>
+      <div class="circle"></div>
+      <div class="form-inner">
+
+        <h1>Update Profile</h1>
+        <div>
+            <input type="text" placeholder="Username" id="username" name="username">
+        </div>
+        <div>
+            <input type="email" placeholder="Email" id="email" name="email">
+        </div>
+        <div>
+            <input type="password" placeholder="New Password" id="password" name="password">
+        </div>
+
+        <button type="submit">Submit</button>
+        
+      </div>
+    </form>
+  </body>
+</html>

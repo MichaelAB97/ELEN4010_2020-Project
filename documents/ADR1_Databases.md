@@ -1,4 +1,4 @@
-# ADR2: Use of SQL over MongoDB for database
+# ADR1: Use of SQL over MongoDB for database
 
 A database also allows the administrator to manage and have access information of users. This is needed to manage the users and their information on the bill sharing application. There are two main choices for the databases that were explored being SQL and MongoDB.
 
