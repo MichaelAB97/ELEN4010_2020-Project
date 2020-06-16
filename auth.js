@@ -4,6 +4,9 @@ const bcrypt = require('bcryptjs')
 const database = require('./modules/database/db-connections')
 const router = require('express').Router()
 
+// Storing temp variable
+const currentUserName = []
+
 router.post('/login', function (req, res) {
   const { username, password } = req.body
   if (!username || !password) {
@@ -22,6 +25,7 @@ router.post('/login', function (req, res) {
         console.log('Username or password is incorrect')
         return res.status(401).redirect('/auth/login')
       } else {
+        currentUserName.push(username)
         res.status(200).redirect('/auth/login/dashboard')
       }
     })
