@@ -1,7 +1,7 @@
 const path = require('path')
 const database = require('./modules/database/db-connections')
 const houseCreation = require('./modules/houseCreation')
-const profileData = require('./modules/database/db-profile-functions')
+//const profileData = require('./modules/database/db-profile-functions')
 const router = require('express').Router()
 
 router.get('/', function (req, res) {
