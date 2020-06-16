@@ -1,30 +1,31 @@
 <!DOCTYPE html>
-<html lang="=en">
-<head>
-    <meta charset="utf-8">
-    <title>Update Profile</title>
-</head>
-<body>
-    <h1>Edit profile</h1>
-    <form action="/api/edit" method="post">
-    <div>
-        <label for="studentName">new username</label>
-        <input type="text" id="username" name="username">
-    </div>
-    <br>
-    <div>
-        <label for="studentName">new email</label>
-        <input type="text" id="email name="email">
-    </div>
-    <br>
-    <div>
-        <label for="studentName">New Password</label>
-        <input type="text" id="password" name="password">
-    </div>
-    <br>
-    <div class="button">
-        <button type="submit">submit</button>
-    </div>
+<html>
+  <head>
+    <title>Update profile</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <link rel="stylesheet" href="/cdn/css/editProfile.css">
+  </head>
+  <body>
+    <form class="decor" action="/api/edit" method="POST">
+      <div class="form-left-decoration"></div>
+      <div class="form-right-decoration"></div>
+      <div class="circle"></div>
+      <div class="form-inner">
+
+        <h1>Update Profile</h1>
+        <div>
+            <input type="text" placeholder="Username" id="username" name="username">
+        </div>
+        <div>
+            <input type="email" placeholder="Email" id="email" name="email">
+        </div>
+        <div>
+            <input type="password" placeholder="New Password" id="password" name="password">
+        </div>
+
+        <button type="submit">Submit</button>
+        
+      </div>
     </form>
-</body>
+  </body>
 </html>
