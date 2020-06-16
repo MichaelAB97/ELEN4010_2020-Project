@@ -36,12 +36,14 @@ app.use('/cdn', express.static('public'))
 const appRouter = require('./appRoutes.js')
 const signupRouter = require('./routes/signUpRoutes.js')
 const signInRouter = require('./routes/signInRoutes.js')
+const profileRoutes = require('./routes/profileRoutes')
 app.use(flash())
 // mounting our router
 app.use('/', appRouter)
 app.use('/cdn', express.static('public'))
 app.use('/signUp', signupRouter)
 app.use('/login', signInRouter)
+app.use('/login/user', profileRoutes)
 
 const port = process.env.PORT || 3000
 app.listen(port)

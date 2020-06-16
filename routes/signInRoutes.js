@@ -25,6 +25,19 @@ router.get('/home', redirectLogin, function (req, res) {
   res.sendFile(path.join(__dirname, '../views', 'profile.html'))
 })
 
+router.get('/api/user', redirectLogin, function (req, res) {
+  let User = { username: 'Undefined' }
+  database.pools
+    .then((pool) => {
+      return pool.request()
+        .query('SELECT * FROM BillCleave.Users')
+    })
+    .then(result => {
+      User = loginCkeck.getUser(result.recordset, req.session.username)
+      res.json(User)
+    })
+})
+
 router.post('/api', function (req, res) {
   const { username, password } = req.body
   if (!username || !password) {
