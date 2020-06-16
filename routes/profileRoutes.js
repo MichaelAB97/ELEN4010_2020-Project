@@ -26,7 +26,7 @@ router.post('/api/create', redirectLogin, function (req, res) {
         database.pools
           .then((pool) => {
             return pool.request()
-              .query('INSERT INTO BillCleave.Houses  (houseName) VALUES (\'' + houseName + '\'')
+              .query('INSERT INTO BillCleave.Houses  (houseName) VALUES (\'' + houseName + '\')')
           })
           .catch(err => {
             console.log(err)
