@@ -19,6 +19,7 @@ const verifyPassword = function (users, username, password) {
 const getUser = function (users, username) {
   if (isRegistered(users, username)) {
     const user = users.filter(user => user.username === username)
+    user[0].password = '********'
     return user[0]
   }
   return {}
