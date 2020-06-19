@@ -1,7 +1,7 @@
 <!DOCTYPE html>
  <html lang="en"> 
      <head> 
-         <title>House creation</title> 
+         <title>House Deletion</title> 
          <meta charset="utf-8" /> 
          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
          <script src="/cdn/scripts/houseList.js"></script>
@@ -12,20 +12,18 @@
         
             <!--House List goes Here    -->
         </div>
-        <h1>Please enter the name of the house you wish to create:</h4>
-            <form action="/login/user/api/createHouse" method="post"> 
+        <h1>Please enter the name of the house you wish to delete:</h4>
+            <form action="/login/user/api/deleteHouse" method="post"> 
             <div class="form-group"> 
                 <label for = 'houseName'>House name:</label> 
                 <input class="form-control" type="text" id="houseName" name="houseName" placeholder="house name here" required> 
                 <small id="emailHelp" class="form-text text-muted">
-                    NOTE: When you create a house you will be autometically added to the house.
+                    NOTE: When you delete a house, make sure that you are the last one left in the House. If not you'll be removed from the house.
                 </small>
             </div> 
             <div class="button"> 
-                <button type="submit">ADD</button> 
+                <button type="submit">DELETE</button> 
             </div> 
-
         </form> 
-
     </body> 
 </html>

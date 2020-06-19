@@ -44,11 +44,6 @@
               <div>
                 <p>
                   <a class="btn btn-primary btn-xs" href="#" role="button"> Edit Details</a>
-                  <form method = 'post' action='/views/createHouse'>
-                    <button>
-                      Create House
-                    </button>
-                  </form>
                   <a class="btn btn-primary btn-xs" href="#" role="button"> Add Transection</a>
               </p>
               </div>
@@ -65,9 +60,17 @@
         </div>
         <hr />
         <div id = "Houses">
+          <div>
+            <form method = 'post' action='/login/user/createHouse'>
+              <button type="submit" class="btn btn-primary">Create House</button>
+            </form>
+            <form method = 'post' action='/login/user/deleteHouse'>
+              <button type="submit" class="btn btn-primary">Delete House</button>
+            </form>
+          </div>
           <h1> HOUSES</h1>
         
-
+          <!--House List goes Here    -->
         </div>
         <hr />
         <div id = "Transections">
