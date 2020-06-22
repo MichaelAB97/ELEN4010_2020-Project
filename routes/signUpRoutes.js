@@ -15,7 +15,7 @@ router.get('/', function (_req, res) {
 // Reading user credentials for signing up
 router.post('/api', function (req, res) {
   // Get the user input
-  const { username, email, password, confirmPassword } = req.body
+  const { username, email, firstName, lastName, mobileNumber, password, confirmPassword } = req.body
 
   // generate hash of password and confirm password
   const passhash = bcrypt.hashSync(password, salt)
@@ -34,7 +34,7 @@ router.post('/api', function (req, res) {
         db.pools
           .then((pool) => {
             return pool.request()
-              .query('INSERT INTO BillCleave.Users (username, email, password) VALUES (\'' + username + '\',\'' + email + '\',\'' + passhash + '\')')
+              .query('INSERT INTO BillCleave.Users (username, email, password, firstName, lastName, mobileNumber) VALUES (\'' + username + '\' , \'' + email + '\' , \'' + passhash + '\', \'' + firstName + '\', \'' + lastName + '\' , \'' + mobileNumber +'\')')
           })
         res.redirect('/')
       } else {
