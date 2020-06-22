@@ -57,7 +57,7 @@ router.get('/api/userHouses', redirectLogin, function (req, res) {
   database.pools
     .then((pool) => {
       return pool.request()
-        .query('SELECT H.houseId, houseName, U.userId, username, email, firstName, LastName, mobileNumber FROM BillCleave.Houses H JOIN BillCleave.UserHouseRelation UHR ON H.houseId = UHR.houseId JOIN BillCleave.Users U ON U.userId = UHR.userId')
+        .query('SELECT H.houseId, houseName, U.userId, username, email, firstName, lastName, mobileNumber FROM BillCleave.Houses H JOIN BillCleave.UserHouseRelation UHR ON H.houseId = UHR.houseId JOIN BillCleave.Users U ON U.userId = UHR.userId')
     })
     .then(result => {
       res.json(result.recordset)
