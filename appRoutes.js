@@ -32,10 +32,6 @@ router.post('/api/create', function (req, res) {
     })
 })
 
-router.get('/signUp', function (req, res) {
-  res.sendFile(path.join(__dirname, 'views', 'signUp.html'))
-})
-
 // Updating user information
 const user1 = {
   name: 'username',

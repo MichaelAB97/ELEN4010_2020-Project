@@ -13,7 +13,7 @@ router.get('/signUp', function (_req, res) {
 })
 
 // Reading user credentials for signing up
-router.post('/api/signUp', function (req, res) {
+router.post('/api', function (req, res) {
   // Get the user input
   const { username, email, password, confirmPassword } = req.body
 
