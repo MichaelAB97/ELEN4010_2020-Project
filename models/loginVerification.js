@@ -2,7 +2,7 @@
 const bcrypt = require('bcryptjs')
 
 const isRegistered = function (users, username) {
-  const user = users.filter(user => user.username === username)
+  const user = users.filter(user => (user.username === username || user.email === username))
 
   if (user.length === 0) { return false }
 
@@ -18,7 +18,7 @@ const verifyPassword = function (users, username, password) {
 
 const getUser = function (users, username) {
   if (isRegistered(users, username)) {
-    const user = users.filter(user => user.username === username)
+    const user = users.filter(user =>( user.username === username || user.email === username))
     user[0].password = '********'
     return user[0]
   }

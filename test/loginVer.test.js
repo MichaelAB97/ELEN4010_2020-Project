@@ -16,6 +16,10 @@ describe('log In verification', () => {
   test('check existing user\'s username', () => {
     const username = 'Madix'
     expect(loginVer.isRegistered(Users, username)).toEqual(true)
+  })  
+  test('check existing user\'s email', () => {
+    const username = 'madix@gmail.com'
+    expect(loginVer.isRegistered(Users, username)).toEqual(true)
   })
 
   test('check non - existing user\'s username', () => {
@@ -37,6 +41,11 @@ describe('log In verification', () => {
   test('Getting existing user from the db list', () => {
     const user = Users[1]
     const username = 'Diz'
+    expect(loginVer.getUser(Users, username)).toEqual(user)
+  })
+  test('Getting existing user with email from the db list', () => {
+    const user = Users[1]
+    const username = 'Diz@gmail.com'
     expect(loginVer.getUser(Users, username)).toEqual(user)
   })
 

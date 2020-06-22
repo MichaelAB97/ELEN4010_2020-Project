@@ -4,7 +4,6 @@ if (process.env.NODE_ENV = 'development') { require('dotenv').config() }
 const database = require('./modules/database/db-connections') // testing db-connection
 const express = require('express')
 var session = require('express-session')
-var flash = require('express-flash-messages')
 
 const { v4: uuidv4 } = require('uuid')
 const app = express()
@@ -37,7 +36,6 @@ const appRouter = require('./appRoutes.js')
 const signupRouter = require('./routes/signUpRoutes.js')
 const signInRouter = require('./routes/signInRoutes.js')
 const profileRoutes = require('./routes/profileRoutes')
-app.use(flash())
 // mounting our router
 app.use('/', appRouter)
 app.use('/cdn', express.static('public'))

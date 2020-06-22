@@ -1,7 +1,7 @@
 const path = require('path')
 const database = require('./modules/database/db-connections')
 const houseCreation = require('./modules/houseCreation')
-//const profileData = require('./modules/database/db-profile-functions')
+// const profileData = require('./modules/database/db-profile-functions')
 const router = require('express').Router()
 
 router.get('/', function (req, res) {
@@ -10,12 +10,6 @@ router.get('/', function (req, res) {
 
 router.get('/about', function (req, res) {
   res.sendFile(path.join(__dirname, 'views', 'about.html'))
-})
-
-
-// house creation
-router.post('/views/createHouse', function (req, res) {
-  res.sendFile(path.join(__dirname, 'views', 'createHouse.html'))
 })
 
 router.post('/api/create', function (req, res) {
