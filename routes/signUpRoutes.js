@@ -8,7 +8,7 @@ const signUpCheck = require('../models/signUpCheck')
 const bcrypt = require('bcryptjs')
 const salt = bcrypt.genSaltSync(10)
 
-router.get('/signUp', function (_req, res) {
+router.get('/', function (_req, res) {
   res.sendFile(path.join(__dirname, '../views', 'signUp.html'))
 })
 
