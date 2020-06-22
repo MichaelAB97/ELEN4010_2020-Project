@@ -61,11 +61,9 @@ router.post('/api', function (req, res) {
 
           res.status(200).redirect('/login/home')
         } else {
-          req.flash('notify', 'Username or password is incorrect')
           return res.status(401).redirect('/login/unauth')
         }
       } else {
-        req.flash('notify', 'Username or password is incorrect')
         return res.status(401).redirect('/login/unauth')
       }
     })
