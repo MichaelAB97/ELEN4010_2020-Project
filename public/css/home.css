@@ -2,11 +2,14 @@
     margin: 0;
     padding: 0;
     font-family: 'Mouse Memoirs';
+    background-color: #cde4fd;
 }
 
 .container{
-    width: 80%;
+    width: 90%;
     margin: auto;
+    background-color: #cde4fd;
+    box-shadow: 0 0 20px 0 rgba(72,94,116,0.7) ;
 }
 
 .navbar{
@@ -14,6 +17,7 @@
     margin: 30px auto;
     display: flex;
     align-items: center;
+    background-color: #e7f2ff
 }
 
 ul{
@@ -67,12 +71,13 @@ ul li a:hover::after{
 }
 
 .left-column h1{
-    font-size: 100px;
-
+    font-size: 135px;
+    margin-left: 39px;
 }
 
 .left-column h3{
-    font-size: 35px;
+    font-size: 40px;
+    margin-left: 100px;
 }
 
 span{
@@ -81,29 +86,36 @@ span{
 
 .left-column p{
     font-size: 27px;
-    color: rgba(49, 48, 48, 0.6);
+    color: rgba(0, 0, 0, 0.6);
     margin: 50px 0;
+    position: center;
+    margin-left: 40px;
 }
 
 .btn button{
     padding: 17px 30px;
-    margin-right: 15px;
+    margin-left: 105px;
     outline: darkgreen;
     border: 1px solid #2e9008;
     border-radius: 20px;
     cursor: pointer;
     color: #2e9008;
     background: transparent;
-    font-size: 20px;
+    font-size: 30px;
 
 }
 
 .btn .primary-btn{
+    background: linear-gradient(#70b356, #7fbe76);
+    box-shadow: 0 2px 15px rgba(27, 209, 43, 0.26);
+    color: #ffffff;
+    
+}
+.btn .secondary-btn{
     background: linear-gradient(#2e9008, #3d9631);
     box-shadow: 0 2px 15px rgba(27, 209, 43, 0.26);
     color: #ffffff;
 }
-
 .btn .primary-btn:hover{
     background: #2e9008;
     border: none;
@@ -118,6 +130,7 @@ span{
     color: #ffffff;
     box-shadow: 0px 2px 15px #999;
     transition: 0.3s;
+    
 }
 
 .share-buttons{
