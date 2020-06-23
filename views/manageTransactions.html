@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+ <html lang="en"> 
+     <head> 
+         <title>House Management</title> 
+         <meta charset="utf-8" /> 
+         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+         <script src="/cdn/scripts/transactionsManagement.js"></script>
+         <link rel="stylesheet" href="/cdn/css/styles.css" type="text/css"/> 
+    </head> 
+    <body> 
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container">
+              <a class="navbar-brand" href="/login/home">Home</a>
+              <a class="navbar-brand" id = "username">:</a>
+              <a class="navbar-brand" id = "email">:</a>
+              <a class="navbar-brand" id = "mobileNumber">:</a>
+            </div>
+        </nav>
+        <div>
+            <h1> Payments</h1>
+            <h3> Peope who owe you:</h3>
+            <ul id = "owed">
+            <!-- outstanding payments here-->
+            </ul>
+            <div id = 'owedTotal'> </div>
+
+            <hr />
+            <h3> People you owe: </h3>
+            <ul id = "owing">
+            <!-- pending approval payments here-->
+            </ul>
+            <div id = 'total'> </div>
+            <form action="/login/user/api/makePayment" method="post" >
+            <div class="form-group">
+                <label for="OwedList">Select Transaction ID to make payment to:</label>
+                <select name = "paymentId" id = "OwedList" class="form-control col-xs-2" >
+                    <!-- House list goes here-->
+                </select>
+              </div>
+            <div> 
+                <input type="submit" value="Pay" class="btn btn-primary btn-xs">
+            </form>
+
+            <hr />
+            <h3> Pending your approval: </h3>
+            <ul id = "pending">
+            <!-- pending approval payments here-->
+            </ul>
+            <form action="/login/user/api/approvePayment" method="post" >
+                <div class="form-group">
+                    <label for="ApproveList">Select Transaction ID to approve</label>
+                    <select name = "approvalId"id = "ApproveList" class="form-control col-xs-2" >
+                        <!-- House list goes here-->
+                    </select>
+                </div>
+                <div>
+
+            </form>
+            <input type="submit" value="Approve" class="btn btn-primary btn-xs">
+        </div>
+        </form>
+
+        <hr />
+        <form method = 'post' action='/login/user/manageHouses'>
+        <button type="submit" class="btn btn-primary btn-xs">Manage Houses</button>
+        </form>
+
+        <hr />
+        <form action="/login/user/api/addTransaction" method="post"> 
+        <div class="form-group">
+            <label for="HouseListMenu">Select House</label>
+            <select name = "houseName" id = "HouseListMenu" class="form-control" onchange="selectionFn()">
+                <!-- House list goes here-->
+            </select>
+        </div>
+            <h4>Add an Expense</h4>
+            <div class="form-group"> 
+                
+                <div class ="col-xs-4">
+                    <label for = 'service'>Expense Details</label> 
+                    <input class="form-control col-xs-2" type="text" id="service" name="service" placeholder="Groceries, Water, e.t.c" required > 
+                </div>
+
+                <div class ="col-xs-4">
+                    <label for = 'amount'>Amount:</label> 
+                    <input class="form-control col-xs-2" type="number" id="amount" name="amount" placeholder="Enter amount here" required >
+                </div>
+                <small id="emailHelp" class="form-text text-muted">
+                    NOTE:This expense will be added to the selected house
+                </small>
+            </div> 
+            <div class="button"> 
+                <button type="submit" class="btn btn-primary">ADD</button> 
+            </div> 
+        </form>
+
+        <div>
+            <h3> House transactions</h3>
+            <table id= "transactionlist" class="table">
+
+            </table>
+            <!--House Members go Here    -->
+        </div>        
+
+    </body> 
+</html>

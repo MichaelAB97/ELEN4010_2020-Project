@@ -60,7 +60,6 @@ fetch('/login/api/user') // Returns a Promise for the GET request
       .catch(function (e) { // Process error for request
         alert(e) // Displays a browser alert with the error message.
       })
-  
   })
   .catch(function (e) { // Process error for request
     alert(e) // Displays a browser alert with the error message.
@@ -75,15 +74,13 @@ const selectionFn = async function () {
     var table = document.getElementById('memberlist')
     var row = table.insertRow(0)
     var nameCell = row.insertCell(0)
-    var firstCell = row.insertCell(1)
-    var lastCell = row.insertCell(2)
-    var emailCell = row.insertCell(3)
-    var numberCell = row.insertCell(4)
+    var fullNamesCell = row.insertCell(1)
+    var emailCell = row.insertCell(2)
+    var numberCell = row.insertCell(3)
     nameCell.innerHTML = member.username
-    firstCell.innerHTML = member.firstName
-    lastCell.innerHTML = member.lastName
+    fullNamesCell.innerHTML = member.firstName + ' ' + member.lastName
     emailCell.innerHTML = member.email
-    numberCell.innerHTML = member.mobileNumer
+    numberCell.innerHTML = member.mobileNumber
   })
   document.getElementById('houseName').value = houseName
   document.getElementById('houseName1').value = houseName

@@ -28,9 +28,20 @@ const getHouseMembers = function (UserHouseList, houseName) {
   return housesMembers
 }
 
+const getExpenseTransactions = function (UserHouseList, housename, amount, userId) {
+  const houseMembers = getHouseMembers(UserHouseList, housename).filter(member => !(member.userId === userId))
+  const pricePerMember = parseInt(amount)/parseInt(houseMembers.length + 1)
+
+  houseMembers.forEach(member => {
+    member.amount = pricePerMember
+  })
+  return houseMembers
+}
+
 module.exports = {
   isInHouseList: isInHouseList,
   getHouseId: getHouseId,
   getUserHouses: getUserHouses,
-  getHouseMembers: getHouseMembers
+  getHouseMembers: getHouseMembers,
+  getExpenseTransactions: getExpenseTransactions
 }
