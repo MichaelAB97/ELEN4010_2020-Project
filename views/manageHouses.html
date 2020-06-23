@@ -15,7 +15,18 @@
               <a class="navbar-brand" id = "email">:</a>
               <a class="navbar-brand" id = "mobileNumber">:</a>
             </div>
-          </nav>
+        </nav>
+
+        <form method = 'post' action='/login/user/createHouse'>
+        <button type="submit" class="btn btn-primary btn-xs">Create House</button>
+        </form>
+        <form method = 'post' action='/login/user/deleteHouse'>
+        <button type="submit" class="btn btn-primary btn-xs">Delete House</button>
+        </form>
+        <form method = 'post' action='/login/user/houseTransactions'>
+            <button type="submit" class="btn btn-primary btn-xs">Manage Transactions</button>
+        </form>
+        
         <div class="form-group">
             <label for="HouseListMenu">Select House</label>
             <select id = "HouseListMenu" class="form-control" onchange="selectionFn()">
@@ -59,7 +70,12 @@
             <div class="button"> 
                 <button type="submit">REMOVE</button> 
             </div> 
-            </form>             
+            </form>   
+            <form method = 'post' action='/login/logout'>
+                <button class="btn btn-primary">
+                  Log Out
+                </button>
+              </form>          
 
     </body> 
 </html>
