@@ -4,7 +4,7 @@ The method chosen for assigning values to user stories is random.
 ##User stories 
 * As a user i want to be able to manage a house/group = 6
 * As a user i want to be able to add and view transactions = 7
-* Added firstName, lastName & mobile number entries on sign up page = 2
+* As a user I want to be able to sign up with my personal details = 2
 * As a user I want to be able to share house link for non-members to join the application. = 4
 * As a user I want a good user interface = 3
 * As a user i would like notes informing me about the new app = 1
