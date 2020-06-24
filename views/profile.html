@@ -13,11 +13,12 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="/cdn/css/styles.css" type="text/css"/> 
     <script src="/cdn/scripts/profile.js"></script>
+    <script type="text/javascript" src="https://platform-api.sharethis.com/js/sharethis.js#property=5ef0f41d0e78e50012568219&product=inline-share-buttons" async="async"></script>
 </head>
 <body >
 <!--Main container. Everything must be contained within a top-level container.-->
 <div class="container-fluid">
-
+  
     <!--First row (only row)-->
     <div class="row extra_margin">
 
@@ -44,14 +45,16 @@
               <div>
                 <p>
                   <a class="btn btn-primary btn-xs" href="#" role="button"> Edit Details</a>
-                  <form method = 'post' action='/views/createHouse'>
-                    <button>
-                      Create House
-                    </button>
-                  </form>
-                  <a class="btn btn-primary btn-xs" href="#" role="button"> Add Transection</a>
               </p>
               </div>
+              <div class="share-buttons">
+                <!-- Facebook -->    
+                    <a href="https://www.facebook.com/sharer.php?u=http://billcleave.azurewebsites.net" target="_blank"><img src="https://4.bp.blogspot.com/-raFYZvIFUV0/UwNI2ek6i3I/AAAAAAAAGSA/zs-kwq0q58E/s1600/facebook.png" alt="Facebook" /></a> 
+                <!-- Twitter --> 
+                    <a href="https://twitter.com/share?url=http://billcleave.azurewebsites.net&text=Simple Share Buttons" target="_blank"><img src="https://4.bp.blogspot.com/--ISQEurz3aE/UwNI4hDaQMI/AAAAAAAAGS4/ZAgmPiM9Xpk/s1600/twitter.png" alt="Twitter" /></a> 
+                <!-- Email --> 
+                    <a href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=&su=Join+BillCleave&body=http://billcleave.azurewebsites.net&ui=2&tf=1&pli=1';" target="_blank"><img src="https://4.bp.blogspot.com/-njgKtNLrPqI/UwNI2o-9WfI/AAAAAAAAGR4/f8da1gBgyLs/s1600/email.png" alt="Email" /></a> 
+                </div>
 
           </div>
 
@@ -59,22 +62,53 @@
 
       <!-- Second column - for small and extra-small screens, will use whatever # cols is available -->
       <div class="col-md-8 col-sm-* col-xs-*">
-        <div id = "Balances">
-          <h1> BALANCES</h1>
+        <div>
+          <h1> Payments</h1>
+          <h3> Outstanding:</h3>
+          <small id="emailHelp" class="form-text text-muted">
+            NOTE:Here is a list of all the people you owe.
+        </small>
+          <ul id = "outstanding">
+
+
+          </ul>
+          <div id = 'total'>
+            
+          </div>
+          <h3> Pending: </h3>
+          <small id="emailHelp" class="form-text text-muted">
+            NOTE:Here is a list of all the payments you have made but have not yet been approved.
+        </small>
+          <ul id = "pending">
+
+
+          </ul>
+
+
 
         </div>
+          <form method = 'post' action='/login/user/houseTransactions'>
+            <button type="submit" class="btn btn-primary btn-xs">Manage Transactions</button>
+          </form>
+
         <hr />
         <div id = "Houses">
           <h1> HOUSES</h1>
+          <div>
+            <form method = 'post' action='/login/user/createHouse'>
+              <button type="submit" class="btn btn-primary btn-xs">Create House</button>
+            </form>
+            <form method = 'post' action='/login/user/deleteHouse'>
+              <button type="submit" class="btn btn-primary btn-xs">Delete House</button>
+            </form>
+            <form method = 'post' action='/login/user/manageHouses'>
+              <button type="submit" class="btn btn-primary btn-xs">Manage Houses</button>
+            </form>
+          </div>
         
-
+          <!--House List goes Here    -->
         </div>
         <hr />
-        <div id = "Transections">
-          <h1> TRANSECTIONS</h1>
-
-        </div>
-
       </div> <!-- End column 2 -->
 
     </div> <!-- End row 1 -->
@@ -83,9 +117,10 @@
 
 
   <form method = 'post' action='/login/logout'>
-    <button>
+    <button class="btn btn-primary">
       Log Out
     </button>
   </form>
+
 </body>
 </html>

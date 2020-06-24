@@ -13,7 +13,7 @@
 <body>
 
   <div class="container">
-    <h1 class="brand"><span>BillCleave</span></h1>
+    <img src="./cdn/images/logo.png">
     <div class="wrapper animated bounceInLeft">
       <div class="company-info">
         <ul>
@@ -22,9 +22,15 @@
             <h5>
                 <div style="text-align:justify">
                  <button class="button button2">
-                    <a href="/login">Click here to Cancel Registration and Login</a>
-                 </button>   
-            </div>
+                    <a href="/login">Click here if you already have an account</a>
+                  </button>
+                  <button class="button button2">
+                    <li><a href="/">Home</a></li>
+                  </button>
+                  <button class="button button2">
+                    <li><a href="about">About Us</a></li>
+                  </button>
+                </div>
             </h5>
 
           </li>
@@ -33,18 +39,39 @@
       <div class="contact">
         <h3 id="status">Sign Up</h3>
       
-        <form class="form-signin" action="./api/signUp" method="POST">
+        <form class="form-signin" action="/signUp/api" method="POST">
             <div class="form-label-group">
                 <label for="inputEmail">Username</label>
                 <input type="text" name="username" id="username" class="form-control"
                     placeholder="Username" required autofocus>
                 
             </div>
+
             <div class="form-label-group">
-                <label for="inputEmail">Email address</label>
-                <input type="email" name="email" id="email" class="form-control"
-                    placeholder="Email address" required autofocus>
-                
+              <label for="inputEmail">Email address</label>
+              <input type="email" name="email" id="email" class="form-control"
+                  placeholder="Email address" required autofocus>
+              
+            </div>
+
+            <div class="form-label-group">
+              <label for="inputFirstName">First Name</label>
+              <input type="text" name="firstName" id="firstName" class="form-control"
+                  placeholder="First Name" required autofocus>
+              
+            </div>
+
+            <div class="form-label-group">
+              <label for="inputLastName">Last Name</label>
+              <input type="text" name="lastName" id="lastName" class="form-control"
+                  placeholder="Last Name" required autofocus>
+            </div>
+
+
+            <div class="form-label-group">
+              <label for="inputMobileNumber">Mobile Number</label>
+              <input type="text" name="mobileNumber" id="mobileNumber" class="form-control"
+                  placeholder="082-123-4567" required autofocus>
             </div>
             
             <div class="form-label-group">
@@ -76,3 +103,5 @@
   </div>
 </body>
 </html>
+
+
