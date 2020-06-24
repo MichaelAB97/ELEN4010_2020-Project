@@ -51,3 +51,13 @@ describe('User-House Management Functions', () => {
     expect(userhouses.length).toEqual(2)
   })
 })
+
+describe('House Transaction Management Function', () => {
+  test('Get House members with amount owing', () => {
+    const houseName = 'house3'
+    const userID = 3
+    const amount = 200
+    const houseMembers = HouseFns.getExpenseTransactions(userHouseList, houseName, amount, userID)
+    expect(houseMembers[0].amount).toEqual(amount / (houseMembers.length + 1))
+  })
+})

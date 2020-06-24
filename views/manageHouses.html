@@ -15,7 +15,20 @@
               <a class="navbar-brand" id = "email">:</a>
               <a class="navbar-brand" id = "mobileNumber">:</a>
             </div>
-          </nav>
+        </nav>
+        <small id="emailHelp" class="form-text text-muted">
+            NOTE: Here you can view your houses and manage them. you can add or remove people from your houses, or create other houses.
+        </small>
+        <form method = 'post' action='/login/user/createHouse'>
+        <button type="submit" class="btn btn-primary btn-xs">Create House</button>
+        </form>
+        <form method = 'post' action='/login/user/deleteHouse'>
+        <button type="submit" class="btn btn-primary btn-xs">Delete House</button>
+        </form>
+        <form method = 'post' action='/login/user/houseTransactions'>
+            <button type="submit" class="btn btn-primary btn-xs">Manage Transactions</button>
+        </form>
+        
         <div class="form-group">
             <label for="HouseListMenu">Select House</label>
             <select id = "HouseListMenu" class="form-control" onchange="selectionFn()">
@@ -32,34 +45,43 @@
 
         <hr />
             <form action="/login/user/api/addMember" method="post"> 
-            <div class="form-group"> 
+            <div class="form-group col-xs-4"> 
                 <label for = 'user'>Please enter the username/email of the user you wish to add to the house:</label> 
-                <input class="form-control" type="text" id="user" name="user" placeholder="username here" required> 
+                <input class="form-control " type="text" id="user" name="user" placeholder="username here" required> 
                 <label for = 'houseName'>House name:</label> 
                 <input class="form-control" type="text" id="houseName" name="houseName" placeholder="house name here" required> 
                 <small id="emailHelp" class="form-text text-muted">
-                    NOTE: Please make sure that the user is registered for the app and is not already part of the house.
+                    NOTE: Please make sure that the user is registered for the app and is not already part of the house. You can also join an existing group provided you know its name (just use your username and that house's name)
                 </small>
+                <div class="button"> 
+                    <button type="submit">ADD</button> 
+                </div> 
             </div> 
-            <div class="button"> 
-                <button type="submit">ADD</button> 
-            </div> 
-            </form>              
+
             <hr />
+            </form>              
             <form action="/login/user/api/removeUser" method="post"> 
-            <div class="form-group"> 
+            <div class="form-group col-xs-4"> 
                 <label for = 'user'>Please enter the username/email of the user you wish to remove from the house:</label> 
-                <input class="form-control" type="text" id="user" name="user" placeholder="username here" required> 
+                <input class="form-control " type="text" id="user" name="user" placeholder="username here" required> 
                 <label for = 'houseName1'>House name:</label> 
                 <input class="form-control" type="text" id="houseName1" name="houseName1" placeholder="house name here" required> 
                 <small id="emailHelp" class="form-text text-muted">
-                    NOTE:Please make sure that the member is part of the given group
+                    NOTE:Please make sure that the member is part of the given group. you can also remove yourself by providing your details.
                 </small>
+                <div class="button"> 
+                    <button type="submit">REMOVE</button> 
+                </div> 
             </div> 
-            <div class="button"> 
-                <button type="submit">REMOVE</button> 
-            </div> 
-            </form>             
+            </form>  
+            <hr />
+            <form method = 'post' action='/login/logout'>
+                <div class=" form-group">
+                    <button class="btn btn-primary">
+                    Log Out
+                    </button>
+                </div>
+              </form>          
 
     </body> 
 </html>

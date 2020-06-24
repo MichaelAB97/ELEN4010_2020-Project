@@ -45,7 +45,6 @@
               <div>
                 <p>
                   <a class="btn btn-primary btn-xs" href="#" role="button"> Edit Details</a>
-                  <a class="btn btn-primary btn-xs" href="#" role="button"> Add Transection</a>
               </p>
               </div>
               <div class="share-buttons">
@@ -63,12 +62,38 @@
 
       <!-- Second column - for small and extra-small screens, will use whatever # cols is available -->
       <div class="col-md-8 col-sm-* col-xs-*">
-        <div id = "Balances">
-          <h1> BALANCES</h1>
+        <div>
+          <h1> Payments</h1>
+          <h3> Outstanding:</h3>
+          <small id="emailHelp" class="form-text text-muted">
+            NOTE:Here is a list of all the people you owe.
+        </small>
+          <ul id = "outstanding">
+
+
+          </ul>
+          <div id = 'total'>
+            
+          </div>
+          <h3> Pending: </h3>
+          <small id="emailHelp" class="form-text text-muted">
+            NOTE:Here is a list of all the payments you have made but have not yet been approved.
+        </small>
+          <ul id = "pending">
+
+
+          </ul>
+
+
 
         </div>
+          <form method = 'post' action='/login/user/houseTransactions'>
+            <button type="submit" class="btn btn-primary btn-xs">Manage Transactions</button>
+          </form>
+
         <hr />
         <div id = "Houses">
+          <h1> HOUSES</h1>
           <div>
             <form method = 'post' action='/login/user/createHouse'>
               <button type="submit" class="btn btn-primary btn-xs">Create House</button>
@@ -80,16 +105,10 @@
               <button type="submit" class="btn btn-primary btn-xs">Manage Houses</button>
             </form>
           </div>
-          <h1> HOUSES</h1>
         
           <!--House List goes Here    -->
         </div>
         <hr />
-        <div id = "Transactions">
-          <h1> TRANSACTIONS</h1>
-
-        </div>
-
       </div> <!-- End column 2 -->
 
     </div> <!-- End row 1 -->
@@ -98,7 +117,7 @@
 
 
   <form method = 'post' action='/login/logout'>
-    <button>
+    <button class="btn btn-primary">
       Log Out
     </button>
   </form>

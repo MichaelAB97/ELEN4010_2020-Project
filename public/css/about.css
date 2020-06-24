@@ -1,0 +1,102 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Mouse Memoirs';
+    background-color: #cde4fd;
+}
+
+.container{
+    width: 90%;
+    margin: auto;
+    background-color: #cde4fd;
+    box-shadow: 0 0 20px 0 rgba(72,94,116,0.7) ;
+}
+
+.navbar{
+    box-shadow: 0 1px;
+    margin: 30px auto;
+    display: flex;
+    align-items: center;
+    background-color: #e7f2ff
+}
+
+ul{
+    flex: 1;
+    text-align: right;
+}
+
+ul li{
+    display: inline-block;
+    list-style: none;
+    margin: 0 25px;
+}
+
+ul li a{
+    text-decoration: none;
+    color: black;
+    padding: 0 10px;
+    position: relative;
+    font-size: 30px;
+}
+
+ul li a::after{
+    content: '' ;
+    width: 0% ;
+    height: 10px ;
+    background: #2e9008;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -55px;
+    transition: 0.5s ;
+
+}
+
+ul li a:hover::after{
+    width: 100% ;
+}
+
+h1{
+    font-size: 90px;
+    margin-left: 39px;
+}
+
+p{
+    font-size: 30px;
+}
+
+.section {
+    float: left;
+    width: 20%;
+    padding: 5px;
+    margin-left: 30px;
+}
+
+
+.Dev::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+
+.Contact h2{
+    margin-top: 30px;
+    font-size: 90px;
+    margin-left: 39px;
+}
+
+.Contact p{
+    margin-left: 39px;
+}
+
+.share-buttons{
+    margin-top: 20px;
+}
+
+.share-buttons a{
+    margin-left: 39px;
+}
+h3{
+    font-size: 40px;
+    margin-left: 39px;
+}
