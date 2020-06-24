@@ -30,7 +30,7 @@ const getHouseMembers = function (UserHouseList, houseName) {
 
 const getExpenseTransactions = function (UserHouseList, housename, amount, userId) {
   const houseMembers = getHouseMembers(UserHouseList, housename).filter(member => !(member.userId === userId))
-  const pricePerMember = parseInt(amount)/parseInt(houseMembers.length + 1)
+  const pricePerMember = (parseInt(amount)/parseInt(houseMembers.length + 1)).toFixed(0)
 
   houseMembers.forEach(member => {
     member.amount = pricePerMember

@@ -58,6 +58,6 @@ describe('House Transaction Management Function', () => {
     const userID = 3
     const amount = 200
     const houseMembers = HouseFns.getExpenseTransactions(userHouseList, houseName, amount, userID)
-    expect(houseMembers[0].amount).toEqual(amount / (houseMembers.length + 1))
+    expect(parseInt(houseMembers[0].amount)).toEqual(amount / (houseMembers.length + 1))
   })
 })
